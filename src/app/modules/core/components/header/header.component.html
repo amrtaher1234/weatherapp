@@ -1,1 +1,10 @@
-<p>header works!</p>
+<mat-toolbar>
+  <span>Weather Forecast</span>
+  <span class="spacer"></span>
+  <button mat-button [matMenuTriggerFor]="menu">Temperature Scale</button>
+  <mat-menu #menu="matMenu">
+    <button (click)="setTempratureType(0)" mat-menu-item>Kelvin</button>
+    <button (click)="setTempratureType(1)" mat-menu-item>Celsius</button>
+    <button (click)="setTempratureType(2)" mat-menu-item>Fahrenheit</button>
+  </mat-menu>
+</mat-toolbar>

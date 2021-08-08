@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import { TempratureTypes } from 'src/app/modules/shared/models';
+import { ConfigService } from '../../services/config.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
+  constructor(private configService: ConfigService) {}
 
-  constructor() { }
-
-  ngOnInit(): void {
+  setTempratureType(tempratureType: TempratureTypes) {
+    this.configService.setTempratureType(tempratureType);
   }
-
 }
