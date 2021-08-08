@@ -11,7 +11,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { LoaderComponent } from './components/loader/loader.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { ErrorMessagePipe } from './pipe/error-message.pipe';
+import { ErrorMessagePipe } from './pipes/error-message.pipe';
 
 @NgModule({
   declarations: [
