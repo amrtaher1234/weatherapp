@@ -12,6 +12,17 @@ export const environment = {
     '404': 'No weather results are available with the given city ids',
     default: 'Something went wrong, please try again later',
   },
+  META: {
+    home: {
+      title: 'Weather App | Home',
+      description:
+        'An application that shows a number of weather data for cities that you could define in the settings',
+    },
+    settings: {
+      title: 'Weather App | Settings',
+      description: 'Update weather configuration over here',
+    },
+  },
 };
 
 /*
