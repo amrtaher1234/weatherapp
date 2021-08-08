@@ -7,11 +7,12 @@ import { CountriesService } from './services/countries.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { SharedModule } from '../shared/shared.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [FooterComponent, HeaderComponent],
   entryComponents: [FooterComponent, HeaderComponent],
-  imports: [CommonModule, HttpClientModule, SharedModule],
+  imports: [CommonModule, HttpClientModule, SharedModule, RouterModule],
   providers: [
     WeatherService,
     CountriesService,

@@ -1,5 +1,5 @@
 <mat-toolbar>
-  <span>Weather Forecast</span>
+  <a [routerLink]="['/']"><span>Weather Forecast</span></a>
   <span class="spacer"></span>
   <button mat-button [matMenuTriggerFor]="menu">Temperature Scale</button>
   <mat-menu #menu="matMenu">
@@ -7,4 +7,7 @@
     <button (click)="setTempratureType(1)" mat-menu-item>Celsius</button>
     <button (click)="setTempratureType(2)" mat-menu-item>Fahrenheit</button>
   </mat-menu>
+  <a [routerLink]="['/settings']" mat-icon-button color="basic">
+    <mat-icon>settings</mat-icon>
+  </a>
 </mat-toolbar>
