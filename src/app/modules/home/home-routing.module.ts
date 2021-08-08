@@ -9,8 +9,8 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'details/:id',
-    component: HomeComponent,
+    path: '**',
+    redirectTo: '',
   },
 ];
 

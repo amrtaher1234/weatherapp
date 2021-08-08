@@ -18,9 +18,6 @@ export class ConfigService {
   get config(): Observable<Config> {
     return this.config$.asObservable();
   }
-  setConfig(data: Config) {
-    this.config$.next(data);
-  }
   setTempratureType(tempratureType: TempratureTypes) {
     this.config$.next({
       ...this.config$.value,

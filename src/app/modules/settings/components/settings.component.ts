@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { take } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 import { ConfigService } from '../../core/services/config.service';
 import { CountriesService } from '../../core/services/countries.service';
 import { TempratureTypes } from '../../shared/models';
@@ -17,10 +19,18 @@ export class SettingsComponent implements OnInit {
     public fb: FormBuilder,
     public configService: ConfigService,
     private countriesService: CountriesService,
-    private router: Router
+    private router: Router,
+    private title: Title,
+    private meta: Meta
   ) {}
 
   ngOnInit(): void {
+    this.title.setTitle(environment.META.settings.title);
+    this.meta.updateTag({
+      name: 'description',
+      content: environment.META.settings.description,
+    });
+
     this.configForm = this.fb.group({
       countries: this.fb.array([]),
       tempratureType: [TempratureTypes.Kelvin, [Validators.required]],
