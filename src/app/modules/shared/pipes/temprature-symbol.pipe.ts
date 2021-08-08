@@ -10,8 +10,10 @@ export class TempratureSymbolPipe implements PipeTransform {
       return '°C';
     } else if (type === TempratureTypes.Kelvin) {
       return 'K';
-    } else {
+    } else if (type === TempratureTypes.Fahrenheit) {
       return '°F';
+    } else {
+      return '';
     }
   }
 }
