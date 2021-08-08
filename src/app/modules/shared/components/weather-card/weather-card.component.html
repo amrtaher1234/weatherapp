@@ -1,9 +1,5 @@
 <ng-container *ngIf="weatherData">
-  <div
-    *ngIf="configService.config | async as config"
-    [ngClass]="'card-' + weatherData.weatherMeta.main"
-    class="card"
-  >
+  <div *ngIf="configService.config | async as config" [ngClass]="'card-' + weatherData.weatherMeta.main" class="card">
     <div>
       <p class="mat-title card__country">
         {{ weatherData.location.country }}
@@ -12,12 +8,9 @@
       <p class="mat-subheading-2">{{ weatherData.weatherMeta.description }}</p>
     </div>
     <!-- make this a div and add desc, other valyes like wind speed and humidity -->
-    <img
-      class="card__icon"
-      src="{{ weatherData.weatherMeta.icon | weatherIcon }}"
-    />
+    <img class="card__icon" src="{{ weatherData.weatherMeta.icon | weatherIcon }}" />
 
-    <h1 class="mat-display-2 card__temp">
+    <h1 class="mat-display-1 card__temp">
       {{ weatherData.temprature | tempratureValue: config.tempratureType }}
       {{ config.tempratureType | tempratureSymbol }}
     </h1>

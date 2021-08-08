@@ -8,7 +8,12 @@ body {
 body {
   margin: 0;
 }
-
+.bold {
+  font-weight: bold !important;
+}
+.bolder {
+  font-weight: bolder !important;
+}
 $main-typography: mat.define-typography-config(
   $font-family: "Montserrat",
 );
