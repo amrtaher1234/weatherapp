@@ -8,23 +8,7 @@ This was a fairly simple task that could be made in a much simpler way but I dec
 
 I decided to follow up a pattern which defines two main modules, a **core** module which defines all of the application single used instances (services) and core modules that shall be used across the application and a **shared** module that will have all of the shared components, pipes, directives and models.
 
-app
-├── modules
-│   └── core
-│       ├── components
-│       ├── interceptors
-│       ├── services
-│       └── index.js
-│   └── shared
-│       ├── components
-│       ├── mocks
-│       ├── pipes
-│       ├── utils
-│   └── (Module Name)
-│       ├── components
-│       ├── services
-│       ├── pipes
-└──
+![al](./src/assets/folder-structure.png)
 
 
 Breaking things further:
@@ -63,8 +47,8 @@ I tried to cover most of the application test cases in components, services and 
 
 These are some references for why I chose such project structure and UI as well
 
-- (Core/Shared Module)[https://frontpills.com/posts/2019/core-shared-modules/]
-- (Inspired Weather Cards)[https://www.pinterest.com/pin/45599014967553568/]
+- [Core/Shared Module](https://frontpills.com/posts/2019/core-shared-modules/)
+- [Inspired Weather Cards](https://www.pinterest.com/pin/45599014967553568/)
 
 
 ## Final Note
