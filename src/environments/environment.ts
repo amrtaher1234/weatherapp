@@ -8,6 +8,10 @@ export const environment = {
   OPEN_WEATHER_API: 'https://api.openweathermap.org/data/2.5/group',
   OPEP_WEATHER_ICONS_BASE: 'http://openweathermap.org/img/wn',
   DEFAULT_COUNTRIES_IDS: ['5107152', '4656585', '2950158'],
+  ERROR_MESSAGES: {
+    '404': 'No weather results are available with the given city ids',
+    default: 'Something went wrong, please try again later',
+  },
 };
 
 /*
