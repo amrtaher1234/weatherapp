@@ -29,4 +29,7 @@ export class CountriesService {
   setCountriesIds = (ids: string[]) => {
     localStorage.setItem('countries', JSON.stringify(ids));
   };
+  clearCustomCountriesIds() {
+    localStorage.removeItem('countries');
+  }
 }

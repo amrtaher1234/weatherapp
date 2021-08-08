@@ -1,6 +1,7 @@
 <mat-toolbar>
   <a [routerLink]="['/']"><span>Weather Forecast</span></a>
   <span class="spacer"></span>
+  <button *ngIf="showClearCountriesButton()" mat-button (click)="clearCustomCountriesIds()">Clear Countries</button>
   <button mat-button [matMenuTriggerFor]="menu">Temperature Scale</button>
   <mat-menu #menu="matMenu">
     <button (click)="setTempratureType(0)" mat-menu-item>Kelvin</button>

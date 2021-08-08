@@ -1,4 +1,8 @@
-export interface OpenWeatherResponse {}
+export interface WeatherDataResponse {
+  data: WeatherData[];
+  error?: string;
+  errorCode?: number;
+}
 export interface WeatherData {
   location: LocationData;
   tempratureType: TempratureTypes;

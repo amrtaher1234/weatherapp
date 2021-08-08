@@ -11,7 +11,7 @@ import {
   weatherForMultipleCitiesMock,
 } from '../../shared/mocks/open-weather.mock';
 
-fdescribe('WeatherService', () => {
+describe('WeatherService', () => {
   let service: WeatherService;
   let httpTestingController: HttpTestingController;
   beforeEach(() => {
@@ -28,7 +28,8 @@ fdescribe('WeatherService', () => {
     expect(service).toBeTruthy();
   });
   it('should return Weather data transformed correctly', (done: DoneFn) => {
-    service.getCurrentWeather().subscribe((data) => {
+    service.getCurrentWeather().subscribe((result) => {
+      let { data } = result;
       // neglect comparing dates and assigning them to the same value
       let currentDate = new Date();
       data = data.map((item) => ({ ...item, time: currentDate }));
