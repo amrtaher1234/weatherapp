@@ -1,4 +1,4 @@
-import { TempratureTypes, WeatherData } from '../models';
+import { TempratureTypes, WeatherData, WeatherDataResponse } from '../models';
 import { getCurrentTimeWithDifference } from '../utils';
 
 export const weatherForMultipleCitiesMock = {
@@ -84,6 +84,7 @@ export const weatherForMultipleCitiesMock = {
     },
   ],
 };
+
 export const expectedWeatherDataForMultipleCitiesMock: WeatherData[] = [
   {
     location: {
@@ -112,3 +113,11 @@ export const expectedWeatherDataForMultipleCitiesMock: WeatherData[] = [
     tempratureType: TempratureTypes.Kelvin,
   },
 ];
+export const weatherDataResponse: WeatherDataResponse = {
+  data: expectedWeatherDataForMultipleCitiesMock,
+};
+export const weatherDataResponseWithError: WeatherDataResponse = {
+  data: [],
+  error: 'error',
+  errorCode: 404,
+};
