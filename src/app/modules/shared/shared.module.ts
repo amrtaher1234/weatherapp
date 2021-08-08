@@ -9,6 +9,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { LoaderComponent } from './components/loader/loader.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { LoaderComponent } from './components/loader/loader.component';
     MatToolbarModule,
     MatMenuModule,
     MatButtonModule,
+    MatInputModule,
+    MatFormFieldModule,
   ],
   exports: [
     WeatherCardComponent,
@@ -35,6 +39,8 @@ import { LoaderComponent } from './components/loader/loader.component';
     MatMenuModule,
     MatButtonModule,
     LoaderComponent,
+    MatInputModule,
+    MatFormFieldModule,
   ],
 })
 export class SharedModule {}

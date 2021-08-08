@@ -1,0 +1,44 @@
+<div class="settings-container">
+  <h1>You can edit the application's configuration here.</h1>
+  <p>
+    You can either add or delete city ids.
+    <br />
+    You can check this link to get your desiried city id
+    <a type="__blank" href="http://bulk.openweathermap.org/sample/"
+      >Open Weather Map</a
+    >
+  </p>
+  <form (ngSubmit)="submitConfig()" #form="ngForm" [formGroup]="configForm">
+    <ng-container
+      formArrayName="countries"
+      *ngFor="let country of countriesFormArray.controls; let i = index"
+    >
+      <mat-form-field [formGroupName]="i" appearance="fill">
+        <mat-label>City ID</mat-label>
+        <input type="number" formControlName="countryId" matInput type="text" />
+        <button
+          type="button"
+          (click)="removeCountry(i)"
+          mat-icon-button
+          matSuffix
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+        <mat-error *ngIf="country.invalid">
+          Country ID is required and should be a number of 7 digits
+        </mat-error>
+      </mat-form-field>
+    </ng-container>
+    <button type="button" (click)="addCountry()" mat-mini-fab color="primary">
+      <mat-icon>add</mat-icon>
+    </button>
+    <button
+      color="primary"
+      [disabled]="configForm.invalid"
+      type="submit"
+      mat-raised-button
+    >
+      Submit
+    </button>
+  </form>
+</div>

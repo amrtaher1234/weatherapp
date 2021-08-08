@@ -1,0 +1,13 @@
+.settings-container {
+  margin-top: 2em;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  mat-form-field,
+  button {
+    margin-bottom: 12px;
+  }
+}
