@@ -1,0 +1,12 @@
+<ng-container *ngIf="weatherData$ | async as weatherData; else loader">
+  <div class="cards-wrapper">
+    <app-weather-card
+      *ngFor="let item of weatherData"
+      [weatherData]="item"
+    ></app-weather-card>
+  </div>
+</ng-container>
+
+<ng-template #loader>
+  <app-loader></app-loader>
+</ng-template>
