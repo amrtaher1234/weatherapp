@@ -8,13 +8,25 @@ export class CountriesService {
   constructor() {}
 
   getCountriesIds = (): string[] => {
-    const localStorageCountries = JSON.parse(
-      localStorage.getItem('countries') as any
-    );
+    try {
+      let localStorageCountries = JSON.parse(
+        localStorage.getItem('countries') as any
+      );
 
-    if (localStorageCountries && Array.isArray(localStorageCountries)) {
-      return localStorageCountries;
+      if (
+        localStorageCountries &&
+        Array.isArray(localStorageCountries) &&
+        localStorageCountries.length
+      ) {
+        return localStorageCountries;
+      }
+      return environment.DEFAULT_COUNTRIES_IDS;
+    } catch (err) {
+      return environment.DEFAULT_COUNTRIES_IDS;
     }
-    return environment.DEFAULT_COUNTRIES_IDS;
+  };
+
+  setCountriesIds = (ids: string[]) => {
+    localStorage.setItem('countries', JSON.stringify(ids));
   };
 }
