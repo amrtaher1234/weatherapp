@@ -1,0 +1,30 @@
+<ng-container *ngIf="weatherData">
+  <div
+    *ngIf="configService.config | async as config"
+    [ngClass]="'card-' + weatherData.weatherMeta.main"
+    class="card"
+  >
+    <div>
+      <p class="mat-title card__country">
+        {{ weatherData.location.country }}
+        <mat-icon aria-hidden="false">place</mat-icon>
+      </p>
+      <p class="mat-subheading-2">{{ weatherData.weatherMeta.description }}</p>
+    </div>
+    <!-- make this a div and add desc, other valyes like wind speed and humidity -->
+    <img
+      class="card__icon"
+      src="{{ weatherData.weatherMeta.icon | weatherIcon }}"
+    />
+
+    <h1 class="mat-display-2 card__temp">
+      {{ weatherData.temprature | tempratureValue: config.tempratureType }}
+      {{ config.tempratureType | tempratureSymbol }}
+    </h1>
+
+    <h2 class="mat-h5 card__time">
+      {{ weatherData.time | date: "h:mm a" }}
+      <mat-icon aria-hidden="false">schedule</mat-icon>
+    </h2>
+  </div>
+</ng-container>

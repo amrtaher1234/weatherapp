@@ -1,0 +1,45 @@
+.card {
+  h1,
+  h2,
+  h4,
+  p {
+    margin: 0;
+  }
+  mat-icon {
+    margin-left: 5px;
+  }
+  img {
+    width: 68px;
+    justify-self: right;
+  }
+  &__time {
+    justify-self: right;
+  }
+  &__time,
+  p {
+    display: flex;
+    align-items: center;
+  }
+  background: #3b5bb1;
+  padding: 30px;
+  color: white;
+  display: grid;
+  border-radius: 10px;
+  height: 170px;
+  margin-bottom: 10px;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  text-align: start;
+  align-items: center;
+}
+
+.card-clouds {
+  background: #8c95a5;
+}
+.card-clear {
+  background: #fde1cc;
+  color: black;
+}
+.card-rain {
+  background: #6dc1ff;
+}
