@@ -5,6 +5,10 @@
   grid-gap: 20px;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   grid-gap: 1em;
+
+  @media only screen and (max-width: 500px) {
+    grid-template-columns: 1fr;
+  }
 }
 .error-wrapper {
   h1,
