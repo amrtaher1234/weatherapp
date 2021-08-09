@@ -1,8 +1,7 @@
 <ng-container *ngIf="weatherData$ | async as weatherData; else loader">
-  <div class="cards-wrapper">
+  <div *ngIf="!weatherData.error" [@staggerAnimation]="weatherData.data.length" class="cards-wrapper">
     <app-weather-card *ngFor="let item of weatherData.data" [weatherData]="item"></app-weather-card>
   </div>
-
   <div class="error-wrapper" *ngIf="weatherData.error">
     <h1 class="mat-display-1 bolder">Oops,</h1>
     <img src="assets/ops.svg" />

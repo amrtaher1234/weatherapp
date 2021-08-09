@@ -5,12 +5,14 @@ import { switchMap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { ConfigService } from '../../core/services/config.service';
 import { WeatherService } from '../../core/services/weather.service';
+import { staggerAnimation } from '../../shared/animations';
 import { WeatherDataResponse } from '../../shared/models';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
+  animations: [staggerAnimation('app-weather-card')],
 })
 export class HomeComponent implements OnInit {
   weatherData$!: Observable<WeatherDataResponse>;
